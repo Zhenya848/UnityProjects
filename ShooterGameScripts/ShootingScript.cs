@@ -24,7 +24,7 @@ public class ShootingScript : MonoBehaviour
             GameObject currentBullet = Instantiate(gun.Bullet, gun.BulletSpawner.position, gun.Bullet.transform.rotation);
 
             currentBullet.transform.forward = distance.normalized;
-            currentBullet.transform.GetChild(0).GetComponent<Rigidbody>().AddForce(distance.normalized * gun.BulletForce, ForceMode.Impulse);
+            currentBullet.GetComponent<Rigidbody>().AddForce(distance.normalized * gun.BulletForce, ForceMode.Impulse);
 
             gun.BulletClip--;
             Destroy(currentBullet, 1.5f);
